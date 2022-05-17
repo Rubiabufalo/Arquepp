@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="formTitle">
+            <h1>Bem vindo!</h1>
+
+            <p>
+                Aplicativo para fazer o cálculo da quantidade de tinta necessária para pintar um cômodo.
+            </p>
+        </div>
+
+        <form method="post" class="formApp">
+            <span id="textoParede">Parede 1</span>
+
+            <div class="container_input">
+                <label for="altura">Altura</label>
+                <input type="number" value="0" name="altura" id="altura">
+                <span>m</span>
+            </div>
+
+            <div class="container_input">
+                <label for="largura">Largura</label>
+                <input type="number" value="0" name="largura" id="largura">
+                <span>m</span>
+            </div>
+
+            <div class="container_input">
+                <label for="janelas">Janelas</label>
+                <input type="number" value="0" name="janelas" id="janelas">
+            </div>
+
+            <div class="container_input">
+                <label for="portas">Portas</label>
+                <input type="number" value="0" name="portas" id="portas">
+            </div>
+
+            <button id="formButton">Adicionar parede</button>
+
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

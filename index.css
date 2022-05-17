@@ -1,0 +1,24 @@
+:root {
+    --primeira: #6d2a15;
+    --segunda: #79828a;
+    --terceira: #816244;
+}
+
+*{
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+body,
+h1,h2,h3,h4,h5,h6,
+p,
+a,
+form,
+span,
+label,
+input,
+button {
+    font-family: 'Raleway', sans-serif;
+}
