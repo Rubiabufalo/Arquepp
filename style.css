@@ -13,23 +13,38 @@
 .formTitle {
     text-align: center;
     width: 30%;
+    margin-top: -90px;
 }
 .formTitle h1 {
     background: var(--terceira);
     color: white;
     border-radius: 5px 5px;
-    box-shadow: 20px 10px 0px 0px var(--segunda);
 }
 
 form {
     position: relative;
-    margin-top: 25px;
+    margin-top: 90px;
     padding: 25px;
     border: 1px solid var(--segunda);
     width: 55%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+
+#mensagem {
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--segunda);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    text-align: center;
+}
+
+#mensagem.hidden {
+    display: none;
 }
 
 .container_input {
@@ -45,7 +60,7 @@ form {
     align-items: center;
     justify-content: center;
     background-color: var(--terceira);
-    color: white;
+    color: rgb(255, 255, 255);
     box-shadow: inset 0 0 3px 0px #322d2d;
     padding: 0 10px;
     border-radius: 5px 0px 0px 5px;
@@ -67,9 +82,8 @@ form {
     background-color: var(--segunda);
     border-radius: 5px;
     margin-left: 5px;
-    box-shadow: inset 0 0 3px 0 #322d2d;
     font-weight: 700;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #textoParede {
@@ -84,7 +98,7 @@ form {
     padding: 15px;
     border: 0;
     background-color: var(--segunda);
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 700;
