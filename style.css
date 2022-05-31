@@ -37,14 +37,19 @@ form {
     top: -77px;
     width: 100%;
     padding: 3px;
-    background-color: #ff0c0c42;
-    color: #a50a0a;
+    background-color: #e64506d8;
+    color: #ffffff;
     border-radius: 5px;
     text-align: center;
 }
+/*Classes de utilidade*/
+.hidden {
+    display: none!important;
+}
 
-#mensagem.hidden {
-    display: none;
+button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .container_input {
@@ -59,7 +64,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--terceira);
+    background-color: var(--primeira);
     color: rgb(255, 255, 255);
     box-shadow: inset 0 0 3px 0px #322d2d;
     padding: 0 10px;
@@ -91,25 +96,37 @@ form {
     top: 6px;
 }
 
-#formButton {
+.btnForm {
     position: absolute;
     bottom: -8px;
     left: 24px;
     padding: 7px;
     border: 0;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 700;
-    box-shadow: inset 0 0 0px 2px #f7bd00;
     cursor: pointer;
     transition: 0.3s all ease-in-out;
+}
+
+#formButton {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    box-shadow: inset 0 0 0px 2px #f7bd00;
 }
 #formButton:hover {
     background-color: rgba(65, 61, 61, 0.267);
 
 }
+#btnCalc {
+    margin-left: 12em;
+    background-color: var(--segunda);
+}
+
+#btnCalc:hover {
+    background-color: #322d2d;
+}
+
 img {
     width: 941px;
     margin-top: 229px;
@@ -126,8 +143,12 @@ img {
         width: auto;
         flex-direction: column;
     }
-    #formButton{
-        width: 100%;
+    .btnForm {
+        width: 88%;
+    }
+    #btnCalc {
+        margin-left: 0;
+        margin-bottom: -3em
     }
 }
 

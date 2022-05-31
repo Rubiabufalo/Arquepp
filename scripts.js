@@ -32,11 +32,30 @@ let mensagem = "";
 let campoMensagem = $("#mensagem");
 
 // Funções
+function calculaTintaNecessaria(comodo) {
+    let area1 = (comodo[0].altura * 1) * (comodo[0].largura * 1);
+    let area2 = (comodo[1].altura * 1) * (comodo[1].largura * 1);
+    let area3 = (comodo[2].altura * 1) * (comodo[2].largura * 1);
+    let area4 = (comodo[3].altura * 1) * (comodo[3].largura * 1);
+
+    let areaJanelas = (comodo[0].nmrJanelas * 2.4) + (comodo[1].nmrJanelas * 2.4) + (comodo[2].nmrJanelas * 2.4) + (comodo[3].nmrJanelas * 2.4);
+    let areaPortas = (comodo[0].nmrPortas * 1.52) + (comodo[1].nmrPortas * 1.52) + (comodo[2].nmrPortas * 1.52) + (comodo[3].nmrPortas * 1.52);
+
+    let areaTotal = (area1 + area2 + area3 + area4);
+    areaTotal = areaTotal - (areaJanelas + areaPortas);
+
+    alert(areaTotal);
+
+}
+
 function atualizaParedeAtual() {
-    if (comodo.length > 0) {
+    if ((comodo.length > 0) && comodo.length < 4) {
         paredeAtual = comodo.length + 1;
     }
-
+    if(comodo.length == 4){
+        $("#btnCalc").removeClass('hidden');
+        $("#formButton").prop('disabled', true);
+    }
     $('#textoParede').text("Parede " + paredeAtual);
 }
 
@@ -67,7 +86,7 @@ function proporcaoParede(nmrPortas, nmrJanelas, altura, largura) {
     let areaPortas = nmrPortas * 1.52;
 
     if ((areaJanelas + areaPortas) <= area) {
-       if (verificaAlturaParede(nmrPortas, altura) == true) {
+       if ((verificaAlturaParede(nmrPortas, altura) == true) && comodo.length < 4) {
         comodo.push({
                 'altura': altura,
                 'largura': largura,
@@ -76,6 +95,9 @@ function proporcaoParede(nmrPortas, nmrJanelas, altura, largura) {
         });
 
         console.log(comodo);
+
+        atualizaParedeAtual();
+
        }
        else {
         mensagem = "A parede deve ter pelo menos 30cm a mais de altura que a porta";
@@ -115,3 +137,9 @@ $('#formButton').on('click', (e) => {
 
     validaParede(altura, largura, nmrPortas, nmrJanelas);
 });
+
+$('#btnCalc').on('click', (e) => {
+    e.preventDefault();
+
+    calculaTintaNecessaria(comodo);
+})
