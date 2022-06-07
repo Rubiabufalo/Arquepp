@@ -141,9 +141,9 @@ $('#formButton').on('click', (e) => {
 
 $('#btnCalc').on('click', (e) => {
     e.preventDefault();
+    let tintaNecessaria = 19;
 
     // let tintaNecessaria = calculaTintaNecessaria(comodo);
-    let tintaNecessaria = 19;
     let cont = 0;
     let qtdLata = 0;
 
@@ -208,5 +208,9 @@ $('#btnCalc').on('click', (e) => {
         cont++;
     }
 
-    console.log(mensagem);
+    campoMensagem.addClass("success");
+    campoMensagem.text(mensagem);
+    campoMensagem.removeClass("hidden");
+
+    $("#btnCalc").prop('disabled', true);
 })

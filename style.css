@@ -36,6 +36,7 @@ form {
     position: absolute;
     top: -77px;
     width: 100%;
+    left: 0;
     padding: 3px;
     background-color: #e64506d8;
     color: #ffffff;
@@ -45,6 +46,11 @@ form {
 /*Classes de utilidade*/
 .hidden {
     display: none!important;
+}
+
+.success {
+    background-color:  #955830!important;
+    color: white;
 }
 
 button:disabled {
